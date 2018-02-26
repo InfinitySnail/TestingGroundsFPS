@@ -2,7 +2,7 @@
 
 #include "FPSTestingGroundsGameMode.h"
 #include "FPSTestingGroundsHUD.h"
-#include "FPSTestingGroundsCharacter.h"
+#include "Player/FirstPersonCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 AFPSTestingGroundsGameMode::AFPSTestingGroundsGameMode()
