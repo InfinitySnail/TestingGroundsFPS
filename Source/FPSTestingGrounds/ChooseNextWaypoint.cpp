@@ -8,6 +8,7 @@
 
 EBTNodeResult::Type UChooseNextWaypoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
+
 	// Get the patrol route
 	auto ControlledPawn = OwnerComp.GetAIOwner()->GetPawn();
 	auto PatrolRoute = ControlledPawn->FindComponentByClass<UPatrolRoute>();
@@ -24,7 +25,7 @@ EBTNodeResult::Type UChooseNextWaypoint::ExecuteTask(UBehaviorTreeComponent& Own
 	// Set next waypoint
 	auto BlackboardComp = OwnerComp.GetBlackboardComponent();
 	auto Index = BlackboardComp->GetValueAsInt(IndexKey.SelectedKeyName);
-	BlackboardComp->SetValueAsObject(IndexKey.SelectedKeyName, PatrolPoints[Index]);
+	BlackboardComp->SetValueAsObject(WaypointKey.SelectedKeyName, PatrolPoints[Index]);
 
 	// Cycle the index
 	auto NextIndex = (Index + 1) % PatrolPoints.Num();
